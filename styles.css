@@ -1,0 +1,144 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 50px 10px;
+    background-color: #f4f4f4;
+}
+
+/* Container Styles */
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h2 {
+    color: #333;
+}
+
+/* Input and Button Group */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 18px;
+    border: none;
+    background: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #218838;
+}
+
+/* Task List */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Task Item */
+li {
+    background: #fff;
+    margin: 5px 0;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Task Text (Ensuring Alignment) */
+.task-text {
+    flex: 1;
+    text-align: left;
+    padding-right: 10px; /* Ensures spacing from the checkbox */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Completed Tasks */
+li.completed .task-text {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Delete Button */
+.delete {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+    margin-left: 10px;
+}
+
+.delete:hover {
+    background: #c82333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensuring that it is a Responsive Design */
+@media (max-width: 500px) {
+    .container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    input, button {
+        width: 100%;
+    }
+
+    li {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
